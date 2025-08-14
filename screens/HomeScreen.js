@@ -58,7 +58,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: { flexGrow: 1, padding: 20, alignItems: 'center', justifyContent: 'center', backgroundColor: '#f2f2f2' },
   title: { fontSize: 24, fontWeight: 'bold', marginBottom: 10, marginTop: 10, textAlign: 'center', },
-  blue: { width: 1000, justifyContent: 'center', backgroundColor: '#7db1e9ff', paddingTop: 10, paddingBottom: 10},
+  blue: { width: 1000, backgroundColor: '#7db1e9ff', paddingTop: 10, paddingBottom: 10},
   subtitle: { fontSize: 20, fontWeight: 'bold', marginBottom: 10, marginTop: 10, textAlign: 'center', },
   button: { backgroundColor: '#007AFF', padding: 15, borderRadius: 8, marginTop: 10, width: '100%' },
   buttonText: { color: '#fff', fontWeight: 'bold', textAlign: 'center', fontSize: 16 }

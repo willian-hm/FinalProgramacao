@@ -16,7 +16,7 @@ export default function ProdutoScreen({ route }) {
   const [parcelas, setParcelas] = useState("1");
   const [resultado, setResultado] = useState(null);
 
-  const taxa = 0.01; // 1% ao mês
+  let taxa = 0.02; // 2% ao mês
 
   // Fórmula de juros compostos PMT
   const calcularParcela = (P, i, n) => {
@@ -40,7 +40,13 @@ export default function ProdutoScreen({ route }) {
       valorParcela = preco / 2;
       totalPago = preco;
     } else {
-      // 5x ou 10x com juros compostos de 1%
+      if (n === 5) {
+        taxa = 0.02;
+      }
+      if (n === 10) {
+        taxa = 0.03;
+      }
+      // 5x ou 10x com juros compostos de 2% ou 3%
       valorParcela = calcularParcela(preco, taxa, n);
       totalPago = valorParcela * n;
     }
@@ -73,8 +79,8 @@ export default function ProdutoScreen({ route }) {
           >
             <Picker.Item label="1x (à vista)" value="1" />
             <Picker.Item label="2x (sem juros)" value="2" />
-            <Picker.Item label="5x (1% a.m.)" value="5" />
-            <Picker.Item label="10x (1% a.m.)" value="10" />
+            <Picker.Item label="5x (2% a.m.)" value="5" />
+            <Picker.Item label="10x (3% a.m.)" value="10" />
           </Picker>
 
           <Button title="Comprar" color="#007AFF" onPress={handleComprar} />
